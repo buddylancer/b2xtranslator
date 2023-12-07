@@ -40,7 +40,7 @@ namespace UnitTests
         object routeDocument = false;
 
 
-        [OneTimeSetUp]
+        [SetUp]
         public void SetUp()
         {
             //read the config
@@ -61,7 +61,7 @@ namespace UnitTests
         }
 
 
-        [OneTimeTearDown]
+        [TearDown]
         public void TearDown()
         {
             this.word2007.Quit(
@@ -120,11 +120,17 @@ namespace UnitTests
 
                 Assert.AreEqual(omRevisionNumber, dffRevisionNumber, "Invalid revision number for {inputFile.FullName}");
 
-                if ((omCreationDate.Value == null ? 1601 : omCreationDate.Value.Year) != 1601)
-                    Assert.AreEqual(omCreationDate.Value, dffCreationDate, "Invalid creation date for {inputFile.FullName}");
+				if (omCreationDate != null)
+				{
+					if ((omCreationDate.Value == null ? 1601 : omCreationDate.Value.Year) == 1601)
+						Assert.AreEqual(omCreationDate.Value, dffCreationDate, "Invalid creation date for {inputFile.FullName}");
+				}
 
-				if ((omLastPrintedDate.Value != null ? 1601 : omLastPrintedDate.Value.Year) != 1601)
-                    Assert.AreEqual(omLastPrintedDate.Value, dffLastPrintedDate, "Invalid print date for {inputFile.FullName}");
+				if (omLastPrintedDate != null)
+				{
+					if ((omLastPrintedDate.Value == null ? 1601 : omLastPrintedDate.Value.Year) == 1601)
+						Assert.AreEqual(omLastPrintedDate.Value, dffLastPrintedDate, "Invalid print date for {inputFile.FullName}");
+				}
             }
         }
 

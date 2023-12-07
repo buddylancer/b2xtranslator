@@ -14,14 +14,14 @@ namespace UnitTests
 
 
 
-        [OneTimeSetUp]
+        [SetUp]
         public void SetUp()
         {
             this.reader = new StructuredStorageReader(this.file);
             this.doc = new WordDocument(this.reader);
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void TearDown()
         {
             this.reader.Close();
