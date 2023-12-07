@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("b2xtranslator")]
+[assembly: AssemblyTitle("xls2x")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Evolution Recruitment Solutions")]
-[assembly: AssemblyProduct("b2xtranslator")]
+[assembly: AssemblyProduct("xls2x")]
 [assembly: AssemblyCopyright("Copyright © Evolution Recruitment Solutions 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b8bcf182-f1dc-4938-8bb3-a94c2c361b52")]
+[assembly: Guid("55d9dfb0-9bba-4d3d-b4ad-932a5d3ac29e")]
 
 // Version information for an assembly consists of the following four values:
 //
