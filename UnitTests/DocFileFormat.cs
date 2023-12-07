@@ -24,7 +24,7 @@ namespace UnitTests
         [OneTimeTearDown]
         public void TearDown()
         {
-            this.reader?.Close();
+            this.reader.Close();
         }
 
         [Test]

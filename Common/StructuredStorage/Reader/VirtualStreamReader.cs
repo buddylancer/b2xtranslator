@@ -21,8 +21,8 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// <returns>The total number of bytes read into the buffer. 
         /// This might be less than the length of the array if that number 
         /// of bytes are not currently available, or zero if the end of the stream is reached.</returns>
-        public int Read(byte[] buffer) =>
-            base.BaseStream.Read(buffer, 0, buffer.Length);
+        public int Read(byte[] buffer) { return
+            base.BaseStream.Read(buffer, 0, buffer.Length); }
 
         /// <summary>
         /// Reads bytes from the current position in the virtual stream.
@@ -32,8 +32,8 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// <returns>The total number of bytes read into the buffer. 
         /// This might be less than the number of bytes requested if that number 
         /// of bytes are not currently available, or zero if the end of the stream is reached.</returns>
-        public int Read(byte[] buffer, int count) =>
-            base.BaseStream.Read(buffer, 0, count);
+        public int Read(byte[] buffer, int count) { return
+            base.BaseStream.Read(buffer, 0, count); }
         
         /// <summary>
         /// Reads count bytes from the current stream into a byte array and advances

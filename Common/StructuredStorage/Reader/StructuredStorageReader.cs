@@ -23,19 +23,19 @@ namespace b2xtranslator.StructuredStorage.Reader
         DirectoryTree _directory;
 
         /// <summary>Get a collection of all entry names contained in a compound file</summary>        
-        public ICollection<string> FullNameOfAllEntries => this._directory.GetPathsOfAllEntries();
+        public ICollection<string> FullNameOfAllEntries { get { return this._directory.GetPathsOfAllEntries(); } }
 
         /// <summary>Get a collection of all stream entry names contained in a compound file</summary>        
-        public ICollection<string> FullNameOfAllStreamEntries => this._directory.GetPathsOfAllStreamEntries();
+        public ICollection<string> FullNameOfAllStreamEntries { get { return this._directory.GetPathsOfAllStreamEntries(); } }
 
         /// <summary>Get a collection of all _entries contained in a compound file</summary> 
-        public ICollection<DirectoryEntry> AllEntries => this._directory.GetAllEntries();
+        public ICollection<DirectoryEntry> AllEntries { get { return this._directory.GetAllEntries(); } }
 
         /// <summary>Get a collection of all stream _entries contained in a compound file</summary> 
-        public ICollection<DirectoryEntry> AllStreamEntries => this._directory.GetAllStreamEntries();
+        public ICollection<DirectoryEntry> AllStreamEntries { get { return this._directory.GetAllStreamEntries(); } }
 
         /// <summary>Get a handle to the RootDirectoryEntry.</summary>
-        public DirectoryEntry RootDirectoryEntry => this._directory.GetDirectoryEntry(0x0);
+        public DirectoryEntry RootDirectoryEntry { get { return this._directory.GetDirectoryEntry(0x0); } }
 
         /// <summary>Initalizes a handle to a compound file based on a stream</summary>
         /// <param name="stream">The stream to the storage</param>
@@ -123,9 +123,9 @@ namespace b2xtranslator.StructuredStorage.Reader
 
 
         /// <summary>Closes the file handle</summary>
-        public void Close() =>this._fileHandler?.CloseStream();
-       
+        public void Close() { this._fileHandler.CloseStream(); }
 
-        public void Dispose() => this.Close();
+
+		public void Dispose() { this.Close(); }
     }
 }

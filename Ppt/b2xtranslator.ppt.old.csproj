@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0C4A502-469B-44E9-955B-F2EF724911AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>b2xtranslator.ppt</RootNamespace>
+    <AssemblyName>b2xtranslator.ppt</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PptFileFormat\AnimationInfoContainer.cs" />
+    <Compile Include="PptFileFormat\BlipCollection9Container.cs" />
+    <Compile Include="PptFileFormat\CharacterRun.cs" />
+    <Compile Include="PptFileFormat\ColorMappingAtom.cs" />
+    <Compile Include="PptFileFormat\ColorSchemeAtom.cs" />
+    <Compile Include="PptFileFormat\CStringAtom.cs" />
+    <Compile Include="PptFileFormat\CurrentUserAtom.cs" />
+    <Compile Include="PptFileFormat\DefaultRulerAtom.cs" />
+    <Compile Include="PptFileFormat\DocumentAtom.cs" />
+    <Compile Include="PptFileFormat\DocumentContainer.cs" />
+    <Compile Include="PptFileFormat\EndDocument.cs" />
+    <Compile Include="PptFileFormat\Environment.cs" />
+    <Compile Include="PptFileFormat\Exceptions.cs" />
+    <Compile Include="PptFileFormat\ExHyperlinkContainer.cs" />
+    <Compile Include="PptFileFormat\ExObjListContainer.cs" />
+    <Compile Include="PptFileFormat\FontCollection.cs" />
+    <Compile Include="PptFileFormat\FontEntityAtom.cs" />
+    <Compile Include="PptFileFormat\FooterMCAtom.cs" />
+    <Compile Include="PptFileFormat\GPointAtom.cs" />
+    <Compile Include="PptFileFormat\GRatioAtom.cs" />
+    <Compile Include="PptFileFormat\GrColorAtom.cs" />
+    <Compile Include="PptFileFormat\Handout.cs" />
+    <Compile Include="PptFileFormat\ITextDataRecord.cs" />
+    <Compile Include="PptFileFormat\List.cs" />
+    <Compile Include="PptFileFormat\MainMaster.cs" />
+    <Compile Include="PptFileFormat\MasterTextPropAtom.cs" />
+    <Compile Include="PptFileFormat\MouseClickInteractiveInfoContainer.cs" />
+    <Compile Include="PptFileFormat\NormalViewSetInfoContainer.cs" />
+    <Compile Include="PptFileFormat\Note.cs" />
+    <Compile Include="PptFileFormat\NotesAtom.cs" />
+    <Compile Include="PptFileFormat\OEPlaceholderAtom.cs" />
+    <Compile Include="PptFileFormat\OriginalMainMasterId.cs" />
+    <Compile Include="PptFileFormat\OutlineTextProps9Container.cs" />
+    <Compile Include="PptFileFormat\OutlineTextRefAtom.cs" />
+    <Compile Include="PptFileFormat\ParagraphRun.cs" />
+    <Compile Include="PptFileFormat\PersistDirectoryAtom.cs" />
+    <Compile Include="PptFileFormat\PersistDirectoryEntry.cs" />
+    <Compile Include="PptFileFormat\Pictures.cs" />
+    <Compile Include="PptFileFormat\PowerpointDocument.cs" />
+    <Compile Include="PptFileFormat\PPDrawing.cs" />
+    <Compile Include="PptFileFormat\PPDrawingGroup.cs" />
+    <Compile Include="PptFileFormat\ProgBinaryTag.cs" />
+    <Compile Include="PptFileFormat\ProgBinaryTagDataBlob.cs" />
+    <Compile Include="PptFileFormat\ProgTags.cs" />
+    <Compile Include="PptFileFormat\RoundTripCompositeMasterId12Atom.cs" />
+    <Compile Include="PptFileFormat\RoundTripContentMasterId12.cs" />
+    <Compile Include="PptFileFormat\RoundTripContentMasterInfo12.cs" />
+    <Compile Include="PptFileFormat\RoundTripOArtTextStyles12.cs" />
+    <Compile Include="PptFileFormat\RoundTripShapeId12.cs" />
+    <Compile Include="PptFileFormat\Slide.cs" />
+    <Compile Include="PptFileFormat\SlideAtom.cs" />
+    <Compile Include="PptFileFormat\SlideHeadersFootersContainer.cs" />
+    <Compile Include="PptFileFormat\SlideListWithText.cs" />
+    <Compile Include="PptFileFormat\SlidePersistAtom.cs" />
+    <Compile Include="PptFileFormat\SlideShowSlideInfoAtom.cs" />
+    <Compile Include="PptFileFormat\SSlideLayoutAtom.cs" />
+    <Compile Include="PptFileFormat\TextAtom.cs" />
+    <Compile Include="PptFileFormat\TextBytesAtom.cs" />
+    <Compile Include="PptFileFormat\TextCFExceptionAtom.cs" />
+    <Compile Include="PptFileFormat\TextCharsAtom.cs" />
+    <Compile Include="PptFileFormat\TextHeaderAtom.cs" />
+    <Compile Include="PptFileFormat\TextMasterStyle9Atom.cs" />
+    <Compile Include="PptFileFormat\TextMasterStyleAtom.cs" />
+    <Compile Include="PptFileFormat\TextPFExceptionAtom.cs" />
+    <Compile Include="PptFileFormat\TextRulerAtom.cs" />
+    <Compile Include="PptFileFormat\TextRunStyleAtom.cs" />
+    <Compile Include="PptFileFormat\TextSpecialInfoAtom.cs" />
+    <Compile Include="PptFileFormat\TextStyleAtom.cs" />
+    <Compile Include="PptFileFormat\Theme.cs" />
+    <Compile Include="PptFileFormat\UserEditAtom.cs" />
+    <Compile Include="PptFileFormat\VbaInfoAtom.cs" />
+    <Compile Include="PptFileFormat\VBAInfoContainer.cs" />
+    <Compile Include="PptFileFormat\VbaProjectAtom.cs" />
+    <Compile Include="PresentationMLMapping\AnimationMapping.cs" />
+    <Compile Include="PresentationMLMapping\AppMapping.cs" />
+    <Compile Include="PresentationMLMapping\CharacterRunPropsMapping.cs" />
+    <Compile Include="PresentationMLMapping\ColorSchemeMapping.cs" />
+    <Compile Include="PresentationMLMapping\ConversionContext.cs" />
+    <Compile Include="PresentationMLMapping\Converter.cs" />
+    <Compile Include="PresentationMLMapping\CoreMapping.cs" />
+    <Compile Include="PresentationMLMapping\FillMapping.cs" />
+    <Compile Include="PresentationMLMapping\HandoutMasterMapping.cs" />
+    <Compile Include="PresentationMLMapping\MasterMapping.cs" />
+    <Compile Include="PresentationMLMapping\NoteMapping.cs" />
+    <Compile Include="PresentationMLMapping\NotesMasterMapping.cs" />
+    <Compile Include="PresentationMLMapping\PresentationMapping.cs" />
+    <Compile Include="PresentationMLMapping\PresentationPartMapping.cs" />
+    <Compile Include="PresentationMLMapping\ShadowMapping.cs" />
+    <Compile Include="PresentationMLMapping\ShapeTreeMapping.cs" />
+    <Compile Include="PresentationMLMapping\SlideMapping.cs" />
+    <Compile Include="PresentationMLMapping\SlideTransitionMapping.cs" />
+    <Compile Include="PresentationMLMapping\TextMapping.cs" />
+    <Compile Include="PresentationMLMapping\TextMasterStyleMapping.cs" />
+    <Compile Include="PresentationMLMapping\TitleMasterMapping.cs" />
+    <Compile Include="PresentationMLMapping\Utils.cs" />
+    <Compile Include="PresentationMLMapping\VbaProjectMapping.cs" />
+    <Compile Include="PresentationMLMapping\viewPropsMapping.cs" />
+    <Compile Include="PresentationMLMapping\VMLPictureMapping.cs" />
+    <Compile Include="PresentationMLMapping\VMLShapeTypeMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PresentationMLMapping\Defaults\clrMap.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\blank.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\chart.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\chartAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\clipArtAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\dgm.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\fourObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\mediaAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\obj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\objAndTwoObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\objAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\objOnly.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\objOverTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\objTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\picTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\secHead.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\tbl.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\title.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\titleOnly.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\twoObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\twoObjAndObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\twoObjAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\twoObjOverTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\twoTxTwoObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txAndChart.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txAndClipArt.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txAndMedia.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txAndObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txAndTwoObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\txOverObj.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\vertTitleAndTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\slideLayouts\vertTx.xml" />
+    <Content Include="PresentationMLMapping\Defaults\theme.xml" />
+    <Content Include="PresentationMLMapping\Defaults\txStyles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\b2xtranslator.old.csproj">
+      <Project>{f14d050f-0f2a-4cd4-b9a9-aeda4f68489f}</Project>
+      <Name>b2xtranslator.old</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -11,14 +11,14 @@ namespace b2xtranslator.OpenXmlLib
         /// <summary>Provides an instance of IZipReader.</summary>
         /// <param name="path">The path of the ZIP file to read.</param>
         /// <returns></returns>
-        public static IZipReader OpenArchive(string path) =>
-            new ZipReader(path);
+        public static IZipReader OpenArchive(string path) { return
+            new ZipReader(path); }
 
         /// <summary>Provides an instance of IZipReader.</summary>
         /// <param name="stream">The stream holding the ZIP file to read.</param>
         /// <returns></returns>
-        public static IZipReader OpenArchive(Stream stream) =>
-            new ZipReader(stream);
+        public static IZipReader OpenArchive(Stream stream) { return
+            new ZipReader(stream); }
 
         sealed class ZipReader : IZipReader
         {
@@ -39,20 +39,20 @@ namespace b2xtranslator.OpenXmlLib
             }
 
             public void Close() {
-                this.fileStream?.Close();
+                this.fileStream.Close();
                 this.fileStream = null;
 
-                this.zipArchive?.Dispose();
+                this.zipArchive.Dispose();
                 this.zipArchive = null;
             }
 
             Stream IZipReader.GetEntry(string relativePath) {
                 string resolvedPath = ResolvePath(relativePath);
                 var entry = this.zipArchive.GetEntry(resolvedPath);
-                return entry?.Open();
+                return entry.Open();
             }
 
-            void IDisposable.Dispose() => this.Close();
+            void IDisposable.Dispose() { this.Close(); }
 
             /// <summary>Resolves a path by interpreting "." and "..".</summary>
             /// <param name="path">The path to resolve.</param>

@@ -26,10 +26,10 @@ namespace b2xtranslator.StructuredStorage.Reader
         }
 
 
-        internal Stream _InternalFileStream => this._stream;
+        internal Stream _InternalFileStream { get { return this._stream; } }
 
         /// <summary>Get the size of the associated stream in bytes</summary>
-        override internal ulong IOStreamSize => (ulong)this._stream.Length;
+        override internal ulong IOStreamSize { get { return (ulong)this._stream.Length; } }
 
         /// <summary>
         /// Seeks relative to the current position by the given offset
@@ -37,7 +37,7 @@ namespace b2xtranslator.StructuredStorage.Reader
         internal long RelativeSeek(long offset)
         {
             if (offset < 0)
-                throw new ArgumentOutOfRangeException(nameof(offset), offset, "Offset cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", offset, "Offset cannot be less than 0.");
 
             return this._stream.Seek(offset, SeekOrigin.Current);
         }
@@ -53,7 +53,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (sector < 0)
-                throw new ArgumentOutOfRangeException(nameof(sector), sector, "Sector cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", sector, "Sector cannot be less than 0.");
 
             // header sector == -1
             if (sector == -1)
@@ -74,7 +74,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (position < 0 || position >= this._header.SectorSize)
-                throw new ArgumentOutOfRangeException(nameof(position), position, "Position less than 0 or greater than the header sector.");
+                throw new ArgumentOutOfRangeException("long", position, "Position less than 0 or greater than the header sector.");
 
             // header sector == -1
             if (sector == -1)
@@ -104,8 +104,7 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// The array size determines the number of bytes to read.
         /// Advances the stream pointer accordingly.
         /// </summary>
-        internal void Read(byte[] array) =>
-            this.Read(array, 0, array.Length);
+        internal void Read(byte[] array) { this.Read(array, 0, array.Length); }
 
         /// <summary>
         /// Reads bytes at the current position of the file stream into a byte array.
@@ -126,8 +125,7 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// Advances the stream pointer accordingly.
         /// </summary>
         /// <returns>The byte cast to an int, or -1 if reading from the end of the stream.</returns>
-        internal int UncheckedReadByte() => 
-            this._stream.ReadByte();
+        internal int UncheckedReadByte() { return this._stream.ReadByte(); }
 
         /// <summary>
         /// Reads bytes at the current position of the file stream into a byte array.
@@ -139,8 +137,8 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// <returns>The total number of bytes read into the buffer. 
         /// This might be less than the number of bytes requested if that number 
         /// of bytes are not currently available, or zero if the end of the stream is reached.</returns>
-        internal int UncheckedRead(byte[] array, int offset, int count) => 
-            this._stream.Read(array, offset, count);
+		internal int UncheckedRead(byte[] array, int offset, int count) {
+			return this._stream.Read(array, offset, count); }
 
         /// <summary>
         /// Reads bytes at the given position of the file stream into a byte array.
@@ -150,7 +148,7 @@ namespace b2xtranslator.StructuredStorage.Reader
         internal void ReadPosition(byte[] array, long position)
         {
             if (position < 0)
-                throw new ArgumentOutOfRangeException(nameof(position), position, "Position cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", position, "Position cannot be less than 0.");
 
             this._stream.Seek(position, 0);
             int result = this._stream.Read(array, 0, array.Length);
@@ -222,7 +220,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (position < 0)
-                throw new ArgumentOutOfRangeException(nameof(position), position, "Position cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", position, "Position cannot be less than 0.");
 
             var array = new byte[2];
             this.ReadPosition(array, position);
@@ -242,7 +240,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (position < 0)
-                throw new ArgumentOutOfRangeException(nameof(position), position, "Position cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", position, "Position cannot be less than 0.");
 
             var array = new byte[4];
             this.ReadPosition(array, position);
@@ -262,7 +260,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (position < 0)
-                throw new ArgumentOutOfRangeException(nameof(position), position, "Position cannot be less than 0.");
+                throw new ArgumentOutOfRangeException("long", position, "Position cannot be less than 0.");
 
             var array = new byte[8];
             this.ReadPosition(array, position);
@@ -283,7 +281,7 @@ namespace b2xtranslator.StructuredStorage.Reader
                 throw new FileHandlerNotCorrectlyInitializedException();
 
             if (size < 1)
-                throw new ArgumentOutOfRangeException(nameof(size), size, "String size cannot be less than 1.");
+                throw new ArgumentOutOfRangeException("int", size, "String size cannot be less than 1.");
 
             var array = new byte[size];
             this.Read(array);

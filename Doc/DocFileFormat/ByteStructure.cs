@@ -11,7 +11,7 @@ namespace b2xtranslator.DocFileFormat
         protected byte[] _rawBytes;
         public const int VARIABLE_LENGTH = int.MaxValue;
 
-        public byte[] RawBytes => this._rawBytes;
+        public byte[] RawBytes { get { return this._rawBytes; } }
 
 
         public ByteStructure(VirtualStreamReader reader, int length) 
@@ -27,7 +27,7 @@ namespace b2xtranslator.DocFileFormat
             }
         }
 
-        public override string ToString() => 
-            Utils.GetHashDump(this._rawBytes);
+        public override string ToString() { return 
+            Utils.GetHashDump(this._rawBytes); }
     }
 }

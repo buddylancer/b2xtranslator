@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30ACED46-5BA9-474D-9AEE-3B224957CF58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>b2xtranslator.doc</RootNamespace>
+    <AssemblyName>b2xtranslator.doc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocFileFormat\AnnotationOwnerList.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceDescriptor.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceDescriptorExtra.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceExtraTable.cs" />
+    <Compile Include="DocFileFormat\AuthorTable.cs" />
+    <Compile Include="DocFileFormat\AutoNumberedListDataDescriptor.cs" />
+    <Compile Include="DocFileFormat\AutoNumberLevelDescriptor.cs" />
+    <Compile Include="DocFileFormat\AutoSummaryInfo.cs" />
+    <Compile Include="DocFileFormat\BookmarkFirst.cs" />
+    <Compile Include="DocFileFormat\BorderCode.cs" />
+    <Compile Include="DocFileFormat\BreakDescriptor.cs" />
+    <Compile Include="DocFileFormat\ByteParseException.cs" />
+    <Compile Include="DocFileFormat\ByteStructure.cs" />
+    <Compile Include="DocFileFormat\CharacterProperties.cs" />
+    <Compile Include="DocFileFormat\CharacterPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\CharacterRange.cs" />
+    <Compile Include="DocFileFormat\CommandIdentifier.cs" />
+    <Compile Include="DocFileFormat\CommandTable.cs" />
+    <Compile Include="DocFileFormat\CustomToolbar.cs" />
+    <Compile Include="DocFileFormat\CustomToolbarWrapper.cs" />
+    <Compile Include="DocFileFormat\DateAndTime.cs" />
+    <Compile Include="DocFileFormat\DocumentProperties.cs" />
+    <Compile Include="DocFileFormat\DocumentTypographyInfo.cs" />
+    <Compile Include="DocFileFormat\DrawingObjectGrid.cs" />
+    <Compile Include="DocFileFormat\DropCapSpecifier.cs" />
+    <Compile Include="DocFileFormat\FileInformationBlock.cs" />
+    <Compile Include="DocFileFormat\FileShapeAddress.cs" />
+    <Compile Include="DocFileFormat\FontFamilyName.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPage.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPageCHPX.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPagePAPX.cs" />
+    <Compile Include="DocFileFormat\FormFieldData.cs" />
+    <Compile Include="DocFileFormat\Global.cs" />
+    <Compile Include="DocFileFormat\HeaderAndFooterTable.cs" />
+    <Compile Include="DocFileFormat\InvalidFileException.cs" />
+    <Compile Include="DocFileFormat\KeyMapEntry.cs" />
+    <Compile Include="DocFileFormat\LanguageId.cs" />
+    <Compile Include="DocFileFormat\LineSpacingDescriptor.cs" />
+    <Compile Include="DocFileFormat\ListData.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverride.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverrideLevel.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverrideTable.cs" />
+    <Compile Include="DocFileFormat\ListLevel.cs" />
+    <Compile Include="DocFileFormat\ListTable.cs" />
+    <Compile Include="DocFileFormat\MacroData.cs" />
+    <Compile Include="DocFileFormat\NilPicfAndBinData.cs" />
+    <Compile Include="DocFileFormat\NumberRevisionMarkData.cs" />
+    <Compile Include="DocFileFormat\OfficeArtContent.cs" />
+    <Compile Include="DocFileFormat\OfficeDrawingTable.cs" />
+    <Compile Include="DocFileFormat\OleObject.cs" />
+    <Compile Include="DocFileFormat\OutlineLiSTData.cs" />
+    <Compile Include="DocFileFormat\ParagraphHeight.cs" />
+    <Compile Include="DocFileFormat\ParagraphPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\PictureBulletInformation.cs" />
+    <Compile Include="DocFileFormat\PictureDescriptor.cs" />
+    <Compile Include="DocFileFormat\PieceDescriptor.cs" />
+    <Compile Include="DocFileFormat\PieceTable.cs" />
+    <Compile Include="DocFileFormat\Plex.cs" />
+    <Compile Include="DocFileFormat\PropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\SectionDescriptor.cs" />
+    <Compile Include="DocFileFormat\SectionPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\ShadingDescriptor.cs" />
+    <Compile Include="DocFileFormat\SinglePropertyModifier.cs" />
+    <Compile Include="DocFileFormat\SprmTDefTable.cs" />
+    <Compile Include="DocFileFormat\StringTable.cs" />
+    <Compile Include="DocFileFormat\StwStructure.cs" />
+    <Compile Include="DocFileFormat\StyleSheet.cs" />
+    <Compile Include="DocFileFormat\StyleSheetDescription.cs" />
+    <Compile Include="DocFileFormat\StyleSheetInformation.cs" />
+    <Compile Include="DocFileFormat\TabDescriptor.cs" />
+    <Compile Include="DocFileFormat\TablePropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\TextMark.cs" />
+    <Compile Include="DocFileFormat\ToolbarControl.cs" />
+    <Compile Include="DocFileFormat\ToolbarControlBitmap.cs" />
+    <Compile Include="DocFileFormat\ToolbarCustomization.cs" />
+    <Compile Include="DocFileFormat\ToolbarDelta.cs" />
+    <Compile Include="DocFileFormat\WordDocument.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordprocessingMLMapping\ApplicationPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CharacterPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CommandTableMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CommentsMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\ConversionContext.cs" />
+    <Compile Include="WordprocessingMLMapping\Converter.cs" />
+    <Compile Include="WordprocessingMLMapping\DateMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\DocumentMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\EndnotesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\Field.cs" />
+    <Compile Include="WordprocessingMLMapping\FontTableMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FooterMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FootnotesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FormFieldDataMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\GlossaryMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\HeaderMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\LanguageIdMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MacroBinaryMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MacroDataMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MainDocumentMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MappingException.cs" />
+    <Compile Include="WordprocessingMLMapping\NumberingMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\OleObjectMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\ParagraphPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\PropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\RevisionData.cs" />
+    <Compile Include="WordprocessingMLMapping\SectionPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\SettingsMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\StyleSheetMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableCellPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableInfo.cs" />
+    <Compile Include="WordprocessingMLMapping\TablePropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableRowPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TextboxMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLPictureMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLShapeMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLShapeTypeMapping.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\b2xtranslator.old.csproj">
+      <Project>{f14d050f-0f2a-4cd4-b9a9-aeda4f68489f}</Project>
+      <Name>b2xtranslator.old</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

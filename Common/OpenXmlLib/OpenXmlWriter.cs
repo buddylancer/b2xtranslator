@@ -38,7 +38,7 @@ namespace b2xtranslator.OpenXmlLib
         {
         }
 
-        public void Dispose() => this.Close();
+        public void Dispose() { this.Close(); }
 
         public void Open(string fileName)
         {
@@ -106,11 +106,11 @@ namespace b2xtranslator.OpenXmlLib
         }
 
         /// <summary>Get or create an XML writer for the current ZIP entry.</summary>
-        XmlWriter XmlWriter =>
-            this.xmlEntryWriter ?? (this.xmlEntryWriter = XmlWriter.Create(this.entryStream, xmlWriterSettings));
+        XmlWriter XmlWriter { get { return
+            this.xmlEntryWriter ?? (this.xmlEntryWriter = XmlWriter.Create(this.entryStream, xmlWriterSettings)); } }
 
-        public void WriteRawBytes(byte[] buffer, int index, int count) =>
-            this.entryStream.Write(buffer, index, count);
+        public void WriteRawBytes(byte[] buffer, int index, int count) {
+            this.entryStream.Write(buffer, index, count); }
 
         public void Write(Stream stream)
         {
@@ -121,85 +121,85 @@ namespace b2xtranslator.OpenXmlLib
                 this.entryStream.Write(buffer, 0, bytesRead);
         }
 
-        public void WriteStartElement(string prefix, string localName, string ns) =>
-            this.XmlWriter.WriteStartElement(prefix, localName, ns);
+        public void WriteStartElement(string prefix, string localName, string ns) {
+            this.XmlWriter.WriteStartElement(prefix, localName, ns); }
 
-        public void WriteStartElement(string localName, string ns) =>
-            this.XmlWriter.WriteStartElement(localName, ns);
+        public void WriteStartElement(string localName, string ns) {
+            this.XmlWriter.WriteStartElement(localName, ns); }
 
-        public void WriteEndElement() =>
-            this.XmlWriter.WriteEndElement();
+        public void WriteEndElement() {
+            this.XmlWriter.WriteEndElement(); }
 
-        public void WriteStartAttribute(string prefix, string localName, string ns) =>
-            this.XmlWriter.WriteStartAttribute(prefix, localName, ns);
+        public void WriteStartAttribute(string prefix, string localName, string ns) {
+            this.XmlWriter.WriteStartAttribute(prefix, localName, ns); }
 
-        public void WriteAttributeValue(string prefix, string localName, string ns, string value) =>
-            this.XmlWriter.WriteAttributeString(prefix, localName, ns, value);
+        public void WriteAttributeValue(string prefix, string localName, string ns, string value) {
+            this.XmlWriter.WriteAttributeString(prefix, localName, ns, value); }
 
-        public void WriteAttributeString(string localName, string value) =>
-            this.XmlWriter.WriteAttributeString(localName, value);
+        public void WriteAttributeString(string localName, string value) {
+            this.XmlWriter.WriteAttributeString(localName, value); }
 
-        public void WriteEndAttribute() =>
-            this.XmlWriter.WriteEndAttribute();
+        public void WriteEndAttribute() {
+            this.XmlWriter.WriteEndAttribute(); }
 
-        public void WriteString(string text) =>
-            this.XmlWriter.WriteString(text);
+        public void WriteString(string text) {
+            this.XmlWriter.WriteString(text); }
 
-        public void WriteFullEndElement() =>
-            this.XmlWriter.WriteFullEndElement();
+        public void WriteFullEndElement() {
+            this.XmlWriter.WriteFullEndElement(); }
 
-        public void WriteCData(string s) =>
-            this.XmlWriter.WriteCData(s);
+        public void WriteCData(string s) {
+            this.XmlWriter.WriteCData(s); }
 
-        public void WriteComment(string s) =>
-            this.XmlWriter.WriteComment(s);
+        public void WriteComment(string s) {
+            this.XmlWriter.WriteComment(s); }
 
-        public void WriteProcessingInstruction(string name, string text) =>
-            this.XmlWriter.WriteProcessingInstruction(name, text);
+        public void WriteProcessingInstruction(string name, string text) {
+            this.XmlWriter.WriteProcessingInstruction(name, text); }
 
-        public void WriteEntityRef(string name) =>
-            this.XmlWriter.WriteEntityRef(name);
+        public void WriteEntityRef(string name) {
+            this.XmlWriter.WriteEntityRef(name); }
 
-        public void WriteCharEntity(char c) =>
-            this.XmlWriter.WriteCharEntity(c);
+        public void WriteCharEntity(char c) {
+            this.XmlWriter.WriteCharEntity(c); }
 
-        public void WriteWhitespace(string s) =>
-            this.XmlWriter.WriteWhitespace(s);
+        public void WriteWhitespace(string s) {
+            this.XmlWriter.WriteWhitespace(s); }
 
-        public void WriteSurrogateCharEntity(char lowChar, char highChar) =>
-            this.XmlWriter.WriteSurrogateCharEntity(lowChar, highChar);
+        public void WriteSurrogateCharEntity(char lowChar, char highChar) {
+            this.XmlWriter.WriteSurrogateCharEntity(lowChar, highChar); }
 
-        public void WriteChars(char[] buffer, int index, int count) =>
-            this.XmlWriter.WriteChars(buffer, index, count);
+        public void WriteChars(char[] buffer, int index, int count) {
+            this.XmlWriter.WriteChars(buffer, index, count); }
 
-        public void WriteRaw(char[] buffer, int index, int count) =>
-            this.XmlWriter.WriteRaw(buffer, index, count);
+        public void WriteRaw(char[] buffer, int index, int count) {
+            this.XmlWriter.WriteRaw(buffer, index, count); }
 
-        public void WriteRaw(string data) =>
-            this.XmlWriter.WriteRaw(data);
+        public void WriteRaw(string data) {
+            this.XmlWriter.WriteRaw(data); }
 
-        public void WriteBase64(byte[] buffer, int index, int count) =>
-            this.XmlWriter.WriteBase64(buffer, index, count);
+        public void WriteBase64(byte[] buffer, int index, int count) {
+            this.XmlWriter.WriteBase64(buffer, index, count); }
 
-        public WriteState WriteState =>
-            this.XmlWriter.WriteState;
+        public WriteState WriteState { get { return
+            this.XmlWriter.WriteState; } }
 
-        public void Flush() =>
-            this.XmlWriter.Flush();
+        public void Flush() {
+            this.XmlWriter.Flush(); }
 
-        public string LookupPrefix(string ns) =>
-            this.XmlWriter.LookupPrefix(ns);
+        public string LookupPrefix(string ns) { return
+            this.XmlWriter.LookupPrefix(ns); }
 
-        public void WriteDocType(string name, string pubid, string sysid, string subset) =>
-            throw new NotImplementedException();
+        public void WriteDocType(string name, string pubid, string sysid, string subset) {
+            throw new NotImplementedException(); }
 
-        public void WriteEndDocument() =>
-            this.XmlWriter.WriteEndDocument();
+        public void WriteEndDocument() {
+            this.XmlWriter.WriteEndDocument(); }
 
-        public void WriteStartDocument(bool standalone) =>
-            this.XmlWriter.WriteStartDocument(standalone);
+        public void WriteStartDocument(bool standalone) {
+            this.XmlWriter.WriteStartDocument(standalone); }
 
-        public void WriteStartDocument() =>
-            this.XmlWriter.WriteStartDocument();
+        public void WriteStartDocument() {
+            this.XmlWriter.WriteStartDocument(); }
     }
 }

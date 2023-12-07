@@ -9,7 +9,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Xml;
-using static b2xtranslator.OpenXmlLib.OpenXmlPackage;
+//using /*static*/ b2xtranslator.OpenXmlLib.OpenXmlPackage;
+using b2xtranslator.OpenXmlLib;
 
 namespace UnitTests
 {
@@ -93,7 +94,7 @@ namespace UnitTests
                 var doc = new WordDocument(reader);
 
                 // Create the output DOCX
-                var docx = WordprocessingDocument.Create(inputFile.FullName + "x", DocumentType.Document);
+                var docx = WordprocessingDocument.Create(inputFile.FullName + "x", OpenXmlPackage.DocumentType.Document);
                 b2xtranslator.WordprocessingMLMapping.Converter.Convert(doc, docx);
             }
         }
@@ -117,13 +118,13 @@ namespace UnitTests
 
                 omDoc.Close(ref this.saveChanges, ref this.originalFormat, ref this.routeDocument);
 
-                Assert.AreEqual(omRevisionNumber, dffRevisionNumber, $"Invalid revision number for {inputFile.FullName}");
+                Assert.AreEqual(omRevisionNumber, dffRevisionNumber, "Invalid revision number for {inputFile.FullName}");
 
-                if ((omCreationDate?.Year ?? 1601) != 1601)
-                    Assert.AreEqual(omCreationDate.Value, dffCreationDate, $"Invalid creation date for {inputFile.FullName}");
+                if ((omCreationDate.Value == null ? 1601 : omCreationDate.Value.Year) != 1601)
+                    Assert.AreEqual(omCreationDate.Value, dffCreationDate, "Invalid creation date for {inputFile.FullName}");
 
-                if ((omLastPrintedDate?.Year ?? 1601) != 1601)
-                    Assert.AreEqual(omLastPrintedDate.Value, dffLastPrintedDate, $"Invalid print date for {inputFile.FullName}");
+				if ((omLastPrintedDate.Value != null ? 1601 : omLastPrintedDate.Value.Year) != 1601)
+                    Assert.AreEqual(omLastPrintedDate.Value, dffLastPrintedDate, "Invalid print date for {inputFile.FullName}");
             }
         }
 
@@ -151,7 +152,7 @@ namespace UnitTests
                     if ((int)c > 0x20)
                         dffText.Append(c);
 
-                Assert.AreEqual(omText.ToString(), dffText.ToString(), $"Invalid characters for {inputFile.FullName}");
+                Assert.AreEqual(omText.ToString(), dffText.ToString(), "Invalid characters for {inputFile.FullName}");
             }
         }
 
@@ -203,13 +204,13 @@ namespace UnitTests
                 omDoc.Close(ref this.saveChanges, ref this.originalFormat, ref this.routeDocument);
 
                 //compare bookmark count
-                Assert.AreEqual(omBookmarkCount, dffBookmarkCount, $"Invalid count of bookmarks for {inputFile.FullName}");
+                Assert.AreEqual(omBookmarkCount, dffBookmarkCount, "Invalid count of bookmarks for {inputFile.FullName}");
 
                 //compare bookmark start
-                Assert.AreEqual(omBookmarkStart, dffBookmarkStart, $"Invalid bookmark start for {inputFile.FullName}");
+                Assert.AreEqual(omBookmarkStart, dffBookmarkStart, "Invalid bookmark start for {inputFile.FullName}");
 
                 //compare bookmark end
-                Assert.AreEqual(omBookmarkEnd, dffBookmarkEnd, $"Invalid bookmark end for {inputFile.FullName}");
+                Assert.AreEqual(omBookmarkEnd, dffBookmarkEnd, "Invalid bookmark end for {inputFile.FullName}");
             }
         }
 
@@ -248,13 +249,13 @@ namespace UnitTests
                 omDoc.Close(ref this.saveChanges, ref this.originalFormat, ref this.routeDocument);
 
                 //compare comment count
-                Assert.AreEqual(omCommentCount, dffCommentCount, $"Invalid comment count for {inputFile.FullName}");
+                Assert.AreEqual(omCommentCount, dffCommentCount, "Invalid comment count for {inputFile.FullName}");
 
                 //compare initials
-                Assert.AreEqual(omFirstCommentInitial, dffFirstCommentInitial, $"Invalid first comment for {inputFile.FullName}");
+                Assert.AreEqual(omFirstCommentInitial, dffFirstCommentInitial, "Invalid first comment for {inputFile.FullName}");
 
                 //compate the author names
-                Assert.AreEqual(omFirstCommentAuthor, dffFirstCommentAuthor, $"Invalid author name for {inputFile.FullName}");
+                Assert.AreEqual(omFirstCommentAuthor, dffFirstCommentAuthor, "Invalid author name for {inputFile.FullName}");
             }
         }
 

@@ -119,7 +119,7 @@ namespace b2xtranslator.DocFileFormat
             }
         }
 
-        public void Convert<T>(T mapping) =>
-            ((IMapping<StringTable>)mapping).Apply(this);
+        public void Convert<T>(T mapping) {
+            ((IMapping<StringTable>)mapping).Apply(this); }
     }
 }
